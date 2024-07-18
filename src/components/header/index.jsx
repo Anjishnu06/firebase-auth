@@ -6,6 +6,9 @@ import { doSignOut } from '../../firebase/auth'
 const Header = () => {
     const navigate = useNavigate()
     const { userLoggedIn } = useAuth()
+    const handleMLModelClick = () => {
+        window.location.href = 'https://van-vargikaran-4.onrender.com/';
+      };
     return (
         <nav className='flex flex-row gap-x-2 w-full z-20 fixed top-0 left-0 h-12 border-b place-content-center items-center bg-gray-200'>
             {
@@ -13,6 +16,7 @@ const Header = () => {
                     ?
                     <>
                         <button onClick={() => { doSignOut().then(() => { navigate('/login') }) }} className='text-sm text-blue-600 underline'>Logout</button>
+                        <button onClick={handleMLModelClick}>ML model</button>
                     </>
                     :
                     <>
